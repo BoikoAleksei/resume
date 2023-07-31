@@ -1,0 +1,126 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+    <h1>{{name}}</h1>
+    </div>
+
+      <p>{{birthdate}}
+         {{birthplace}}
+         {{deathdat }}
+         {{deathplace}}
+         {{nationalit}}
+         {{occupation}}
+    </p>
+</div>
+
+<div>
+ <ul>
+{{#each known_for}}
+  <li>
+  {{this}}
+  </li>
+{{/each}}
+</ul>
+</div>
+ 
+ <div>
+ {{#each education}}
+ {{degree}}
+ <br>
+ {{field}}
+ <br>
+ {{institution}}
+ <br>
+ {{year}}
+ <br>
+ {{/each}}
+ </div>
+ 
+<div>
+    
+{{#each notable_publications}}
+ <q>{{title}}
+ {{year}}
+ {{publisher}}</q>
+ {{/each}}
+ 
+</div>
+
+  <div>
+    
+{{#each partners}}
+ <strong>{{name}}</strong>
+ {{relationship}}
+ {{years}}
+ {{/each}}
+ 
+</div>
+  
+  <div>
+    
+{{#each awards}}
+ <q>{{title}}
+ {{year}}
+ {{description}}</q>
+ {{/each}}
+ 
+</div>
+
+<div>
+<p>{{#each influences}}
+  {{this}}
+{{/each}}</p>
+</div>
+
+<div>
+<p>{{#each influenced}}
+  {{this}}
+{{/each}}</p>
+</div>
+
+<div>
+<p>{{#each quotes}}
+  {{this}}
+{{/each}}</p>
+</div>
+
+ <div>
+    
+{{#each major_discoveries}}
+ <q>{{title}}
+ {{year}}
+ {{description}}</q>
+ {{/each}}
+ 
+</div>
+
+<div>
+{{#with contributions}}
+<p> {{title}}
+ <q>{{description}}</q>
+ {{year}}
+ {{field}}</p>
+ {{/with}}
+</div>
+ 
+
+
+
+    
+
+    
+ 
+
+
+
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
