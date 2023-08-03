@@ -32,19 +32,18 @@
     <br>
     {{country}}
     {{/with}}
-    {{/with}}
-
-    </div>
-
-     <div>
-{{#each exhibits}}
+    {{#each exhibits}}
 <h3>{{name}}</h3>
   {{artist}}
  <q> {{description}}</q>
   {{#if audio_guide includeZero=true}} {{/if}}
   {{#unless artist includeZero=true}} {{/unless}}
   {{/each}} 
-  
+    {{/with}}
+
+    </div>
+
+     <div>
   {{#with venue}}
  <h3>{{name}}</h3>
  {{#with location}}  
@@ -56,20 +55,18 @@
     {{/with}}
     
 {{#each performers}}
-{{name}}
+<q>{{name}}</q>
+<br>
 {{type}}
 {{/each}}
 
  {{#with guide}}
- <h3> {{name}} </h3>
+ {{name}} 
  <br>
  {{language}}
  <br>
  {{rating}}
- <br>
- {{name}}
- {{type}}
- {{duration}}
+
  
  </div>
  </div>
