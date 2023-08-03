@@ -1,0 +1,94 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with program}}
+    {{#with excursion}}
+    <h1>{{name}}</h1>
+    {{#with location}}
+    {{city}}
+    <br>
+    {{country}}
+    {{/with}}
+    <br> 
+    {{date}}
+
+ <div>
+{{#each program}}
+<h3>{{name}}</h3>
+  {{type}}
+  {{duration}}   
+
+<div>
+{{#with details }}
+{{#with museum}}
+ <h3>{{name}}</h3>
+
+ {{#with location}}  
+  <address>{{address}}</address>
+  {{city}}
+    <br>
+    {{country}}
+    {{/with}}
+    {{#each exhibits}}
+<h3>{{name}}</h3>
+  {{artist}}
+ <q> {{description}}</q>
+  {{#if audio_guide includeZero=true}} {{/if}}
+  {{#unless artist includeZero=true}} {{/unless}}
+  {{/each}} 
+    {{/with}}
+
+    </div>
+
+     <div>
+  {{#with venue}}
+ <h3>{{name}}</h3>
+ {{#with location}}  
+  <address>{{address}}</address>
+  {{city}}
+    <br>
+    {{country}}
+    {{/with}}
+    {{/with}}
+    
+{{#each performers}}
+<q>{{name}}</q>
+<br>
+{{type}}
+{{/each}}
+
+ {{#with guide}}
+ {{name}} 
+ <br>
+ {{language}}
+ <br>
+ {{rating}}
+
+ 
+ </div>
+ </div>
+{{/with}}
+{{/with}}
+{{/each}}
+{{/with}}
+{{/with}}
+
+</div>
+ 
+ 
+
+
+    
+
+    
+ 
+
+
+
+
+
+
+
