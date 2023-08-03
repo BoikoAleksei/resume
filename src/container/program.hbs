@@ -45,7 +45,6 @@
   {{#unless artist includeZero=true}} {{/unless}}
   {{/each}} 
   {{/with}}
-
   {{#with venue}}
  <h3>{{name}}</h3>
  {{#with location}}  
@@ -55,7 +54,10 @@
     {{country}}
     {{/with}}
     {{/with}}
-    
+{{#each performers}}
+{{name}}
+{{type}}
+{{/each}}
  {{#with guide}}
  <h3> {{name}} </h3>
  <br>
@@ -66,24 +68,14 @@
  {{name}}
  {{type}}
  {{duration}}
+ 
  </div>
-
-{{#each performers}}
-{{name}}
-{{type}}
-
-{{/each}}
-{{/with}}
-{{/with}}
-{{/with}}
-{{/with}}
  </div>
 {{/with}}
 {{/with}}
 {{/each}}
 {{/with}}
 {{/with}}
-
 </div>
  
  
