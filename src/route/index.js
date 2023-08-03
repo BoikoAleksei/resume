@@ -524,7 +524,7 @@ router.get('/program', function (req, res) {
               guide: {
                 name: 'Francois',
                 language: 'French',
-                rating: 4.8
+                rating: 4.8,
               },
             },
           },

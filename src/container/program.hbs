@@ -14,6 +14,7 @@
     {{/with}}
     <br> 
     {{date}}
+
  <div>
 {{#each program}}
 <h3>{{name}}</h3>
@@ -25,12 +26,16 @@
 {{#with museum}}
  <h3>{{name}}</h3>
 
-{{#with location}}  
+ {{#with location}}  
   <address>{{address}}</address>
   {{city}}
     <br>
     {{country}}
     {{/with}}
+    {{/with}}
+
+    </div>
+
      <div>
 {{#each exhibits}}
 <h3>{{name}}</h3>
@@ -39,14 +44,40 @@
   {{#if audio_guide includeZero=true}} {{/if}}
   {{#unless artist includeZero=true}} {{/unless}}
   {{/each}} 
-  
+  {{/with}}
+
+  {{#with venue}}
+ <h3>{{name}}</h3>
+ {{#with location}}  
+  <address>{{address}}</address>
+  {{city}}
+    <br>
+    {{country}}
+    {{/with}}
+    {{/with}}
+    
  {{#with guide}}
  <h3> {{name}} </h3>
  <br>
  {{language}}
  <br>
  {{rating}}
- {{/with}}
+ <br>
+ {{name}}
+ {{type}}
+ {{duration}}
+ </div>
+
+{{#each performers}}
+{{name}}
+{{type}}
+
+{{/each}}
+{{/with}}
+{{/with}}
+{{/with}}
+{{/with}}
+ </div>
 {{/with}}
 {{/with}}
 {{/each}}
