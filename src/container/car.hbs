@@ -1,0 +1,180 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+<div>
+<h1>{{make}}</h1>
+</div>
+<hr>
+ {{model}}
+<br>
+{{year}}
+<br>
+{{color}}
+<br>
+</div>
+<div>
+ {{#with features}}
+ {{#with interior}}
+ {{#with seats}}
+ {{material}}
+ <br>
+ {{color}}
+ <br>
+{{#if heated includeZero=true}} {{/if}}
+{{#if ventilated includeZero=true}} {{/if}}
+ {{/with}}
+<br>
+ {{#with dashboard}}
+ {{material}}
+ <br>
+ {{color}}
+ {{#with display}}
+ <br>
+ {{type}}
+ <br>
+ {{size}}
+ <br>
+ {{resolution}}
+ {{#if touchscreen includeZero=true}} {{/if}}
+ {{/with}}
+ {{/with}}
+</div>
+<br>
+
+<div>
+    {{#with audio}}
+    {{system}}
+    <br>
+    {{ speakers}}
+    {{#if subwoofer includeZero=true}} {{/if}}
+{{#if bluetooth includeZero=true}} {{/if}}
+{{#if USB includeZero=true}} {{/if}}
+{{/with}}
+ {{/with}}
+ 
+</div>
+<br>
+
+<div>
+    {{#with exterior}}
+    {{#with wheels}}
+    {{size}}
+    <br>
+    {{type}}
+    <br>
+    {{color}}
+    {{/with}}
+    <br>
+    {{#with headlights}}
+{{type}}
+<br>
+{{brightness}}
+{{#if automatic includeZero=true}} {{/if}}
+{{/with}}
+<br>
+{{#with sunroof}}
+{{type}}
+<br>
+{{size}}
+{{#if automatic includeZero=true}}{{/if}}
+{{/with}}
+ {{/with}}
+ </div>
+<br>
+ <div>
+{{#with safety}}
+{{#with airbags}}
+{{front}}
+<br>
+{{side}}
+<br>
+{{knee}}
+<br>
+{{rear}}
+{{/with}}
+
+{{#with assistance}}
+  {{#if blind_spot_monitoring includeZero=true}} {{/if}}
+{{#if rear_cross_traffic_alert includeZero=true}} {{/if}}
+{{#if lane_departure_warning includeZero=true}} {{/if}}  {{#if subwoofer includeZero=true}} {{/if}}
+{{#if adaptive_cruise_control includeZero=true}} {{/if}}
+{{#if collision_warning includeZero=true}} {{/if}}
+{{/with}}
+{{/with}}
+{{/with}}
+</div>
+
+<div>
+{{#with engine}}
+{{type}}
+<br>
+ {{displacement}}
+ <br>
+ {{horsepower}}
+ <br>
+ {{torque}}
+ <br>
+ {{#with transmission}}
+ {{type}}
+ <br>
+ {{gears}}
+ {{/with}}
+ {{/with}}
+</div>
+
+<div>
+    {{#with fuel_economy}}
+    {{city}}
+    <br>
+    {{highway}}
+    <br>
+    {{combined}}
+    {{/with}}
+    <br>
+    {{#with price}}
+    <br>
+    {{base}}
+    <br>
+    {{destination}}
+    <br>
+    {{#with options}}
+    {{navigation}}
+    <br>
+    {{moonroof}}
+    <br>
+    {{premium_paint}}
+    {{/with}}
+    <h2>total</h2>
+    {{/with}}
+</div>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+    
+
+    
+ 
+
+
+
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
