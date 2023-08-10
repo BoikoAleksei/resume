@@ -1,0 +1,146 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+<div>
+<h1>{{name}}</h1>
+{{description}}
+<br>
+{{price}}
+<br>
+{{category}}
+</div>
+<div>
+    {{#with features}}
+    {{#with processor}}
+    <br>
+    {{brand}}
+    <br>
+    {{model}}
+    <br>
+    {{speed}}
+    <br>
+    {{cores}}
+    <br>
+    {{cache}}
+    <br>
+    {{/with}}
+    {{#with memory}}
+     {{type}}
+    <br>
+    {{size}}
+    <br>
+    {{speed}}
+    <br>
+    {{/with}}
+
+{{#with storage}}
+     {{type}}
+    <br>
+    {{size}}
+    <br>
+    {{/with}}
+
+      {{#with display}}
+    <br>
+    {{size}}
+    <br>
+    {{resolution}}
+    <br>
+    {{technology}}
+    <br>
+    {{color_space}}
+    <br>
+    {{brightness}}
+    <br>
+    {{refresh_rate}}
+    <br>
+    {{/with}}
+
+    {{#with graphics}}
+    <br>
+     {{brand}}
+    <br>
+    {{model}}
+    <br>
+    {{memory}}
+    <br>
+    {{/with}}
+    </div>
+
+    <div>
+        {{#each ports}}
+        {{type}}
+        <br>
+        {{count}}
+        {{#each features}}
+        <li>{{this}}</li>
+        {{/each}}
+        {{/each}}
+        {{#with battery}}
+        {{type}}
+        <br>
+        {{capacity}}
+        <br>
+        {{life}}
+        {{/with}}
+       
+        <br>
+        </div>
+        <div>
+             <h5>{{weight}}</h5>
+      {{#with dimensions}}  
+      <br>
+      {{height}}
+      <br>
+      {{width}}
+      <br>
+      {{depth}}
+      {{/with}}  
+         <h5>{{operating_system}}</h5>
+{{#each accessories}}
+<br>
+        {{name}}
+        <br>
+        {{price}}
+        <br>
+    {{/each}}
+
+    {{/with}}
+</div>
+</div>
+    
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+    
+
+    
+ 
+
+
+
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
