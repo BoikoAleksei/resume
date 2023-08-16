@@ -4,14 +4,16 @@
 --}}
 
 <div>
-<div>
+     <div>
 <h1>{{name}}</h1>
+    </div>
 {{description}}
 <br>
 {{price}}
 <br>
 {{category}}
 </div>
+
 <div>
     {{#with features}}
     {{#with processor}}
@@ -27,6 +29,9 @@
     {{cache}}
     <br>
     {{/with}}
+</div>
+
+<div>
     {{#with memory}}
      {{type}}
     <br>
@@ -35,7 +40,9 @@
     {{speed}}
     <br>
     {{/with}}
+</div>
 
+<div>
 {{#with storage}}
      {{type}}
     <br>
@@ -68,8 +75,8 @@
     {{memory}}
     <br>
     {{/with}}
-    </div>
-
+ </div>
+ 
     <div>
         {{#each ports}}
         {{type}}
@@ -88,7 +95,9 @@
         {{/with}}
        
         <br>
+
         </div>
+
         <div>
              <h5>{{weight}}</h5>
       {{#with dimensions}}  
@@ -99,7 +108,13 @@
       <br>
       {{depth}}
       {{/with}}  
+      </div>
+
+      <div>
          <h5>{{operating_system}}</h5>
+     </div>
+
+     <div>
 {{#each accessories}}
 <br>
         {{name}}
@@ -110,7 +125,7 @@
 
     {{/with}}
 </div>
-</div>
+
     
 
 
