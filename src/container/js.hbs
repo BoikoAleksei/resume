@@ -3,23 +3,31 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<section>
+<div>
 
+<div>
 <h1>{{name}}</h1>
 <hr>
  {{description}}
+ </div>
+
 <br>
+
+<div>
  {{#with history}}
  {{year}}
  <br>
     {{founder}}
     {{/with}}
+</div>
 
+<div>
 {{#each types}}
 <li>
 {{this}}
 </li>
 {{/each}}
+</div>
 
 <div>
 {{#with syntax}}
@@ -34,7 +42,9 @@
 <br>
 {{classes}}
 {{/with}}
+</div>
 
+<div>
 {{#each features}}
 <li>
 {{this}}
@@ -53,7 +63,9 @@
 </li>
 {{/each}}
 <br>
+</div>
 
+<div>
 {{#each community}}
 <li>
 {{name}}
@@ -62,7 +74,7 @@
 </li>
 {{/each}}
 </div>
-</section>
+</div>
 
 
 
@@ -70,7 +82,9 @@
 
 
 
-</section>
+
+
+
 
 
 
