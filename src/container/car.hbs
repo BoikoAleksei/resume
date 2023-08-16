@@ -4,6 +4,7 @@
 --}}
 
 <div>
+    <div>
 <div>
 <h1>{{make}}</h1>
 </div>
@@ -15,6 +16,7 @@
 {{color}}
 <br>
 </div>
+
 <div>
  {{#with features}}
  {{#with interior}}
@@ -26,6 +28,9 @@
 {{#if heated includeZero=true}} {{/if}}
 {{#if ventilated includeZero=true}} {{/if}}
  {{/with}}
+ </div>
+
+ <div>
 <br>
  {{#with dashboard}}
  {{material}}
@@ -54,8 +59,10 @@
 {{#if USB includeZero=true}} {{/if}}
 {{/with}}
  {{/with}}
- 
+
+
 </div>
+
 <br>
 
 <div>
@@ -67,14 +74,22 @@
     <br>
     {{color}}
     {{/with}}
+  </div>
+
     <br>
+
+<div>
     {{#with headlights}}
 {{type}}
 <br>
 {{brightness}}
 {{#if automatic includeZero=true}} {{/if}}
 {{/with}}
+</div>
+
 <br>
+
+<div>
 {{#with sunroof}}
 {{type}}
 <br>
@@ -83,7 +98,9 @@
 {{/with}}
  {{/with}}
  </div>
+
 <br>
+
  <div>
 {{#with safety}}
 {{#with airbags}}
@@ -95,7 +112,9 @@
 <br>
 {{rear}}
 {{/with}}
+</div>
 
+<div>
 {{#with assistance}}
   {{#if blind_spot_monitoring includeZero=true}} {{/if}}
 {{#if rear_cross_traffic_alert includeZero=true}} {{/if}}
@@ -148,6 +167,7 @@
     {{/with}}
     <h2>total</h2>
     {{/with}}
+</div>
 </div>
 
 
