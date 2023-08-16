@@ -6,6 +6,9 @@
 <div>
     <div>
 <h1>{{name}}</h1>
+    </div>
+
+<div>
 
 {{#each users}}
 <hr>
@@ -15,52 +18,61 @@
 {{gender}}
 {{age}}
 <br>
-
-{{#each friends}}
-<hr>
-{{id}}
-<br>
-<h5>{{name}}</h5>
-{{gender}}
-{{age}}
-{{/each}}
-<br>
-{{#each friends}}
-{{#each mutual_friends}}
-<hr>
-{{id}}
-<br>
-<h5>{{name}}</h5>
-{{gender}}
-{{age}}
-<br>
-{{/each}}
-
-{{/each}}
-
-{{#each groups}}
-<hr>
-{{id}}
-<h5>{{name}}</h5>
-<q>{{description}}</q>
-
-{{#each members}}
-<hr>
-{{id}}
-<br>
-<h5>{{name}}</h5>
-{{gender}}
-{{age}}
-<br>
-{{/each}}
-{{/each}}
-
 </div>
-
-
 
 <div>
 {{#each friends}}
+<hr>
+{{id}}
+<br>
+<h5>{{name}}</h5>
+{{gender}}
+{{age}}
+{{/each}}
+<br>
+{{#each friends}}
+{{#each mutual_friends}}
+<hr>
+{{id}}
+<br>
+<h5>{{name}}</h5>
+{{gender}}
+{{age}}
+<br>
+{{/each}}
+
+
+{{/each}}
+</div>
+
+<div>
+{{#each groups}}
+<hr>
+{{id}}
+<h5>{{name}}</h5>
+<q>{{description}}</q>
+
+
+{{#each members}}
+<hr>
+{{id}}
+<br>
+<h5>{{name}}</h5>
+{{gender}}
+{{age}}
+<br>
+{{/each}}
+{{/each}}
+
+
+</div>
+
+<div>
+
+
+<div>
+
+{{#each friends}}
 {{#each mutual_friends}}
 {{#each mutual_friends}}
 <hr>
@@ -73,12 +85,20 @@
 {{/each}}
 {{/each}}
 
+</div>
+</div>
+
+<div>
 
 {{#each groups}}
 <hr>
 {{id}}
 <h5>{{name}}</h5>
 <q>{{description}}</q>
+
+</div>
+
+<div>
 
 {{#each members}}
 <hr>
@@ -89,14 +109,17 @@
 {{age}}
 
 
-<br>
+
+
 {{/each}}
 {{/each}}
 {{/each}}
 {{/each}}
+
 </div>
+
 </div>
-</div>
+
     
 
 
