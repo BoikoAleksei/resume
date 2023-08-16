@@ -8,7 +8,8 @@
 <h1>{{name}}</h1>
     </div>
 
-    <div>
+<div>
+
 {{#each users}}
 <hr>
 {{id}}
@@ -40,6 +41,7 @@
 <br>
 {{/each}}
 
+
 {{/each}}
 </div>
 
@@ -49,6 +51,7 @@
 {{id}}
 <h5>{{name}}</h5>
 <q>{{description}}</q>
+
 
 {{#each members}}
 <hr>
@@ -61,11 +64,13 @@
 {{/each}}
 {{/each}}
 
+
 </div>
 
 <div>
 
-    <div>
+
+<div>
 
 {{#each friends}}
 {{#each mutual_friends}}
@@ -79,18 +84,22 @@
 <br>
 {{/each}}
 {{/each}}
+
 </div>
 </div>
 
 <div>
+
 {{#each groups}}
 <hr>
 {{id}}
 <h5>{{name}}</h5>
 <q>{{description}}</q>
+
 </div>
 
 <div>
+
 {{#each members}}
 <hr>
 {{id}}
@@ -101,11 +110,14 @@
 
 
 
+
 {{/each}}
 {{/each}}
 {{/each}}
 {{/each}}
+
 </div>
+
 </div>
 
     
