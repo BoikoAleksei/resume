@@ -1,3 +1,4 @@
+<main>
 <div>
     <br>
     <div class="row gy-5">
@@ -15,95 +16,60 @@
         </div>
         </div>  
         </div>
-        </div>
-</div>  
+        </div>  
 <br>
 <br> 
+<h1>{{header}}</h1>
+
 
 <div>
-    {{#with newsBlock}}
+    {{#with contacts_data}}
 <h1 class="text-center">{{title}}</h1>    
 <div class="row gx-3 gy-3">
-{{#each cards}}
+{{#each buttons}}
     <div class="col-3">
-      <div class="card text text-center">
-    <div class="card-body">
-        <h6> <div class= "card-header"> {{title}}</div> </h6>
-<p>{{description}}</p>
-{{#if isHot includeZero=true}} {{/if}}
-{{#if isNew includeZero=true}} {{/if}}
-</div>
-</div>
+<button class="btn btn-outline-warning">{{text}}</button>  
+        
+{{#if isPrimary includeZero=true}} {{/if}}
+{{#if isOutline includeZero=true}} {{/if}}
 </div>
 {{/each}}
 </div>
 {{/with}}
 </div>
-<hr>
+<br>
 
-<section>
-    {{#with goodsBlock}}
- <ul class="nav nav-tabs">
-    {{#each tabs}}
-   <li class="nav-link {{#if isActive}} activ {{/if}}
-{{#if isDisabled}} disabled {{/if}}">
-{{text}}
-</li>
+<div class="row">
+    <div class="col-8">
+{{#with form}}
+{{#each input}}
+<div class="col-4 g-2">
+            <label class="form-lable">{{label}}</label>
+            <input class="form-control" placeholder={{placeholder}} type="text">
+            <div class="form-text"> {{caption}}</div>
+        </div>  
 {{/each}}
-</ul>
+<hr class="my-4">
 
-<div class="row gx-3 gy-3">
-{{#each cards}}
-<section class="col-4">
-<div class="card text">
-    <img class="card-img-top" src="http://picsum.photos/400/200" alt="Product photo"> 
-    <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
- <p class="text">{{description}}</p>
- <ul class="nav nav-tabs">
- <li class="nav-link {{#if isHot}} hot {{/if}}
-{{#if isNew}} new {{/if}}">
-{{text}}
-</li>
-</ul>
+{{#each switch}}
+
+<div class="col-8">
+    <div class="form -check form-switch {{#if @first}} mb-3{{/if}}">
+    <input class="form-check-input" type="checkbox"{{#if isActive}} checked {{/if}}>
+    <label class="form-check-label"> {{text}} </label>
 </div>
-</div>
-</section>
+
 {{/each}}
-</div>
 {{/with}}
+</div>
+</div>
 
-<section>
-{{#with subscribe}}
-<div class="card text-bg-dark">
-    <div class="card-header text">
-    <div class="card-body text">
-<h2>{{header}}</h2>
-<p>{{description}}</p>
-{{#each buttons}}
-<a href={{"link"}} class="btn btn-primary">{{text}}</a>
-{{/each}}
-</div>
-</div>
-</div>
-{{/with}}
-</section>
 
-<section>
-{{#with service}}
-<div class="card text-bg-success">
-    <div class="card-header text-center">
-    <div class="card-body text-center">
-<h2>{{title}}</h2>
-<p>{{description}}</p>
-{{#each buttons}}
-<a href={{"link"}} class="btn btn-primary">{{text}}</a>
-{{/each}}
-</div>
-</div>
-</div>
-{{/with}}
-</section>
+
+
+
+
+
 
 <footer>
     <div class="row g-5">
@@ -119,11 +85,8 @@
 </div>
 {{/each}}
 </footer>
+</main>
 
-
-
-1 сдулать кнопки одна за другой
-2 проставить надпись новое 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
     Адже наш layout/default.hbs має вже структуру HTML
