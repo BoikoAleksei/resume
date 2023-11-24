@@ -11,7 +11,7 @@
       <a href={{"href"}}class="nav-link">{{text}}</a>
         {{/each}}
         {{/with}}
-        </div>
+
         </div>
         </div>
         </div>  
@@ -21,11 +21,12 @@
 <br> 
 <h1>{{header}}</h1>
 <div>
+<div class="row gx-3 gy-3">
+    <div class="col-8"></div>
     {{#with contacts_data}}
 <h1 class="text-center">{{title}}</h1>    
-<div class="row gx-3 gy-3">
 {{#each buttons}}
-    <div class="col-3">
+    <div class="col-4">
 <button class="btn btn-outline-warning"> {{text}} </button>  
         
 {{#if isPrimary includeZero=true}} {{/if}}
@@ -33,6 +34,7 @@
 </div>
 {{/each}}
 </div>
+
 <div>
     <br>
 </div>
@@ -41,7 +43,7 @@
     <div class="col-8">
 {{#with form}}
 {{#each input}}
-<div class="col-4 g-2">
+<div class="col-8 g-2">
             <label class="form-lable">{{label}}</label>
             <input class="form-control" placeholder={{placeholder}} type="text">
             <div class="form-text"> {{caption}}</div>
@@ -124,12 +126,14 @@ class="btn d-flex my-1 {{#if isPrimary}} btn-primary{{/if}}
 {{/with}}
 
 <div>
+    <div class="row">
+    <div class="col-8"></div>
 {{#with delivery}}
 <h2 class="mb-2">{{title}}</h2>
     <div class="card mb-4">
         <div class="card-body row">
         {{#each select}}
-        <div class="col-4">
+        <div class="col-8">
   <label class="form-label">{{label}}</label>
   <select class="form-selekt"> 
   <option selected>{{placeholder}}</option>
@@ -355,6 +359,14 @@ class="btn d-flex my-1 {{#if isPrimary}} btn-primary{{/if}}
 </div>
 {{/each}}
 </footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </main>
 
 {{!-- 
