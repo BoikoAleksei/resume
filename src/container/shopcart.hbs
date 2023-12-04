@@ -1,0 +1,156 @@
+<main>
+    <section>  
+            <div class="card">   
+       <nav class="nav">
+        {{#with navigation}}
+        {{#each links}}
+  <a class="nav-link active" aria-current="page" href={{"href"}}>{{text}}</a>
+{{/each}}
+{{/with}}
+<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</nav>
+</div>
+<br>
+<br>
+        {{#with header}}
+<h3 class="text">{{title}}</h3>
+{{#with button}}
+<a href={{"link"}} class="btn btn-outline-secondary">{{text}}</a>
+{{/with}}
+{{/with}}
+<br>
+<br>
+<hr class="my-4">
+
+        <div class="row g-3">
+{{#each goodsBlock}}
+
+<div class="card" style="540px;">
+  <div class="row">
+    <div class="col-2">
+    <img class="card-img-top" src="https://picsum.photos/110/110" alt="Product photo"> 
+</div>
+
+ <div class="col-4">
+        <h6 class="card-title">{{name}}</h6>
+ <p class="text">{{description}}</p>
+ </div>
+
+ {{#with price}}
+ <div class="col-2">
+ <span class="d-flex">{{title}}: {{value}}</span>
+  </div>
+ {{/with}}
+
+ <div class="col-2">
+ <h6>1 шт</h6>
+ </div>
+ 
+ <div class="col-2">
+    {{#each buttons}}
+ <button class="d-flex my-1 btn {{#if isPrimary}}btn-primary{{/if}} {{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
+{{/each}}
+
+</div>
+</div>
+</div>
+{{/each}}
+
+<br>
+<br>
+<hr class="my-4">
+
+<div class="col-5">
+{{#with total}}
+<h4 class="mb-2">{{title}}</h4>
+<h3>{{amount}}</h3>
+{{delivery}}
+<br>
+{{#each buttons}}
+<div class="col-10">
+ <a href={{"link"}} button class="d-flex my-1 btn {{#if isSuccess}}btn-success{{/if}} {{#if isOutline}}btn-outline-success{{/if}}">{{text}}</a>
+</div>
+{{/each}}
+{{/with}}
+</div> 
+<br>
+<br>
+<hr class="my-4">
+ 
+{{#with goodsOtherBlock}}
+<h3 class="text">{{title}}</h3>
+
+<div class="row gx-3 gy-3">
+{{#each cards}}
+<section class="col-4">
+<div class="card text">
+    <img class="card-img-top" src="http://picsum.photos/400/200" alt="Product photo"> 
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+ <p class="text">{{description}}</p>
+ <ul class="nav nav-tabs">
+ <li class="nav-link {{#if isHot}} hot {{/if}}
+{{#if idNew}} Нове {{/if}}">
+{{text}}
+</li>
+</ul>
+</div>
+ </div>
+</section>
+{{/each}}
+{{/with}}
+<br>
+<br>
+<hr class="my-4">
+
+<div>
+{{#with subscribe}}
+<div class="card text-bg-dark">
+    <div class="card-header text">
+    <div class="card-body text">
+<h2>{{header}}</h2>
+<p>{{description}}</p>
+
+<div class="row gy-3">
+<div class="col-4">
+{{#each buttons}}
+<a href={{"link"}} class="btn btn-primary">{{text}}</a>
+{{/each}}
+</div>
+</div>
+</div>
+</div>
+
+{{/with}}
+</div>
+
+
+
+<footer>
+    <div class="row g-5">
+        {{#each footer}}
+    <div class="nav col-2">
+    <div>
+{{#each this}}
+<div>
+    <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+     </div>
+{{/each}}
+</div>
+</div>
+{{/each}}
+</footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
