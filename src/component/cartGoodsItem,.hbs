@@ -1,0 +1,33 @@
+<div class="row g-3">
+{{#each goodsBlock}}
+
+<div class="card" style="540px;">
+  <div class="row">
+    <div class="col-2">
+    <img class="card-img-top" src="https://picsum.photos/110/110" alt="Product photo"> 
+</div>
+
+ <div class="col-4">
+        <h6 class="card-title">{{name}}</h6>
+ <p class="text">{{description}}</p>
+ </div>
+
+ {{#with price}}
+ <div class="col-2">
+ <span class="d-flex">{{title}}: {{value}}</span>
+  </div>
+ {{/with}}
+
+ <div class="col-2">
+ <h6>1 шт</h6>
+ </div>
+ 
+ <div class="col-2">
+    {{#each buttons}}
+ <button class="d-flex my-1 btn {{#if isPrimary}}btn-primary{{/if}} {{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
+{{/each}}
+
+</div>
+</div>
+</div>
+{{/each}}

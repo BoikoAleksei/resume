@@ -1,0 +1,216 @@
+<main>
+    <section>  
+            <div class="card">   
+       <nav class="nav">
+        {{#with navigation}}
+        {{#each links}}
+  <a class="nav-link active" aria-current="page" href={{"href"}}>{{text}}</a>
+{{/each}}
+{{/with}}
+<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</nav>
+</div>
+<br>
+<br>
+
+<h1 class="text">{{header}}</h1> 
+       
+  {{#with purchase}}
+
+<div class="nav nav-tabs">
+{{#each tabs}}
+<a href="#" class="nav-link active">{{this}}</a>
+{{/each}}
+</div>
+{{#with actionBlock}}
+
+<div class="row">
+<div class="col-4">
+{{#with input}}          
+ <input class="form-control" placeholder="{{placeholder}}" type="text">
+{{/with}}
+</div>
+
+<div class="col-4">
+    <nav class="nav">
+{{#each buttons}}
+<a class="my-1 btn {{#if isSuccess}}btn-success{{/if}} 
+{{#if isOutline}}btn-outline-success{{/if}} 
+{{#if isDanger}}btn-outline-danger{{/if}}"
+aria-current="page" href={{"href"}}>{{text}}</a>
+{{/each}}
+</nav>
+</div>
+{{/with}}
+</div>
+<hr class="my-4">
+
+  {{#each itemList}}
+    <div class="card">
+ <div class="row g-3">
+ <div class="col-4">
+        <h6 class="card-title">{{number}}</h6>
+ <p class="text">{{status}}</p>
+</div>
+<div class="col-3">
+ {{#with amount}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+  </div>
+ {{/with}}
+
+{{#each images}}
+    <div class="col-1">
+    <img class="card-img-top" 
+    src="https://picsum.photos/110/110" alt="Product photo"> 
+</div>
+ {{/each}}
+
+<div class="col-1">
+    <nav class="nav">
+    {{#with button}}
+ <a class="my-1 btn {{#if isPrimary}}btn-primary{{/if}}"
+aria-current="page" href={{"href"}}>{{text}}</a>
+</div>
+{{/with}}
+</nav>
+</div>
+</div>
+{{/each}}
+{{/with}}
+<br>
+<hr class="my-4">
+
+
+
+{{#with userInfo}}
+<h2 class="text">{{title}}</h2> 
+
+<div class="card">
+ <div class="row">
+    <div class="col-4">
+{{#with  profileData}}
+<h3 class="text">{{title}}</h3>
+
+<br>
+
+<div class="card">
+ <div class="row">
+    <div class="col-4">
+{{#each fullName}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+  {{/each}}
+  </div>
+  </div>
+  </div>
+
+  <br>
+
+<div class="card">
+ <div class="row">
+    <div class="col-4">
+  {{#each otherInfo}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+  {{/each}}
+  </div>
+  </div>
+  </div>
+{{/with}}
+</div>
+</div>
+</div>
+
+<br>
+
+<div class="card">
+ <div class="row">
+    <div class="col-4">
+    {{#each buttons}}
+ <a class="my-1 btn {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isSecondary}}btn-outline-secondary{{/if}} 
+{{#if isDanger}}btn-outline-danger{{/if}}"
+aria-current="page" href={{"link"}}>{{text}}</a>
+{{/each}}
+</div>   
+</div>
+</div>
+
+<br>
+
+<div class="card">
+ <div class="row">
+    <div class="col-4">
+{{#with recipients}}
+<h2 class="text">{{title}}</h2>
+<div class="card">
+    <div class="col-4">
+{{#each users}}
+<span class="d-flex">{{name}}: {{phone}}</span>
+{{#with button}}
+<a href={{"link"}} class="btn btn-primary">{{text}}</a>
+{{/with}}
+{{/each}}
+</div>
+</div>
+{{/with}}
+</div>
+</div>
+</div>
+
+<br>
+
+<div class="card">
+    <div class="row">
+    <div class="col-4">
+{{#with contacts}}
+<h2 class="text">{{title}}</h2>
+<div class="card">
+    <div class="col-4">
+{{#each contactData}}
+<span class="d-flex">{{title}}:{{value}}</span>
+{{#with button}}
+<a class="my-1 btn {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isSecondary}}btn-outline-secondary{{/if}} 
+{{#if isDanger}}btn-outline-danger{{/if}}"
+aria-current="page" href={{"link"}}>{{text}}</a>
+{{/with}}
+{{/each}}
+</div>
+</div>
+{{/with}}
+{{/with}}
+</div>
+</div>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="row g-5">
+        {{#each footer}}
+    <div class="nav col-2">
+    <div>
+{{#each this}}
+<div>
+    <a class="nav-link {{#if @last}} disabled {{/if}}" 
+    href="{{this.link}}">{{this.text}}</a>
+     </div>
+{{/each}}
+</div>
+</div>
+{{/each}}
+</footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
