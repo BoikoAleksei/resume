@@ -1,0 +1,238 @@
+<main>
+    <section>  
+            <div class="card">   
+       <nav class="nav">
+        {{#with navigation}}
+        {{#each links}}
+  <a class="nav-link active" aria-current="page" href={{"href"}}>{{text}}</a>
+{{/each}}
+{{/with}}
+<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</nav>
+</div>
+<br>
+<br>
+ 
+ <div class="row">
+    <div class="col-8">
+  {{#with formBlock}}
+<h1 class="text">{{header}}</h1>
+{{#with rating}}
+<span class="d-flex">{{title}}: {{value}}</span>
+{{/with}}
+{{#with actionBlock}}
+{{#each tabs}}
+   <div class="row gy-3">
+        <div class="col-8">
+    <div class="nav nav-tabs">
+        
+        <div class="nav-item">
+                         {{#if isActive}}
+<a class="nav-link active">Відгуки</a>
+
+        </div>
+         <div class="nav-item">
+            <a href="#" class="nav-link">Про товар</a>
+        </div>
+         <div class="nav-item">
+            <a href="#" class="nav-link">Характеристики</a>
+        </div>
+        {{/if}}
+        </div>
+     </div>
+ </div>
+{{/each}}
+<br>
+
+<hr class="my-4">
+<br>
+
+{{#with report}}
+    <div class="card">
+ <div class="row g-3">
+ <div class="col-8">
+    <br>
+        <h6 class="card-title">{{title}}</h6>
+{{#with button}}
+
+<a href={{"link"}} class="btn btn-primary">{{text}}</a>
+{{/with}}
+{{/with}}
+</div>
+</div>
+</div>
+{{/with}}
+
+</div>
+</div>
+<br>
+<hr class="my-4">
+
+{{#with feedbackBlock}}
+<h2 class="text">{{title}}</h2> 
+<br>
+<br>
+<div class="col-9">
+{{#each buttons}}
+<a class="my-1 btn {{#if isWarning}}btn-warning{{/if}} 
+{{#if isSuccess}}btn-success{{/if}} 
+{{#if isDanger}}btn-danger{{/if}}"
+aria-current="page" href={{"link"}}>{{text}}</a>
+{{/each}}
+</div>
+{{/with}}
+
+
+
+<br>
+<hr class="my-4">
+
+  
+              <div class="col-4">
+                          <div class="card mb-3">
+                    <div class="card-body">
+                       
+                        {{#with goodsInfo}}
+                        
+                         <img class="card-img-top" 
+    src="https://picsum.photos/110/110" alt="Product photo"> </img>
+     <span class="d-flex">{{name}}</span>
+
+</div>
+</div>
+
+<div class="card mb-3">
+                    <div class="card-body">
+<span class="d-flex">{{price}}</span>
+{{#each buttons}}
+<a class="my-1 btn {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isSecondary}}btn-secondary{{/if}}"
+aria-current="page" href={{"link"}}>{{text}}</a>
+{{/each}}
+</div>
+</div>
+
+{{#with seller}}
+<div class="card mb-3">
+                    <div class="card-body">
+                        
+ <span class="d-flex">{{title}}: {{value}}</span>
+ </div>
+ </div>
+ {{/with}}
+{{/with}}
+</div>
+{{/with}}
+</div>
+</section>
+
+<div class="card mb-3">
+<div class="card-body">
+
+{{#each reviewList}}
+ <div class="card mb-3">
+ <div class="row g-3">
+ <div class="col-12">
+
+    {{#with title}}
+    <h2 class="text">{{userName}}</h2>
+       <div>{{caption}}</div> 
+        <div>{{date}}</div>
+ {{/with}}
+
+ <hr class="my-4">
+
+ {{#with reviewBody}}
+
+ {{#with seller}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+ {{/with}}
+
+ {{#with rating}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+ {{/with}}
+
+ {{#each text}}
+ <p>{{this}}</p>
+ {{/each}}
+ 
+ {{#with advantages}}
+ <h6 class="text">{{title}}</h6>
+ <p>{{text}}</p>
+ {{/with}}
+
+ {{#with disadvantages}}
+ <h6 class="text">{{title}}</h6>
+ <p>{{text}}</p>
+ {{/with}}
+ 
+<div class="col-2">
+ {{#each images}}
+ <img class="card-img-top" 
+    src="https://picsum.photos/110/110" alt="Product photo">{{this.images}} </img>
+ {{/each}}
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ {{#each coments}}
+ <div class="card mb-3">
+ <div class="row g-3">
+    <div class="card-body">
+ <h2 class="text">{{userName}}</h2>
+       <div>{{date}}</div> 
+        <p>{{text}}</p>
+        </div>
+        </div>
+        </div>
+       
+{{/each}}
+ </div>
+</div>
+ {{/with}}
+</div>
+</div>
+</div>
+ {{/each}}
+</div>
+</div>
+</div>
+<section>
+{{#with service}}
+<div class="card text-bg-success">
+    <div class="card-header text-center">
+    <div class="card-body text-center">
+<h2>{{title}}</h2>
+<p>{{description}}</p>
+{{#each buttons}}
+<a href={{"link"}} class="btn btn-primary">{{text}}</a>
+{{/each}}
+</div>
+</div>
+</div>
+{{/with}}
+</section>
+
+<footer>
+    <div class="row g-5">
+        {{#each footer}}
+    <div class="nav col-2">
+    <div>
+{{#each this}}
+<div>
+    <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+     </div>
+{{/each}}
+</div>
+</div>
+{{/each}}
+</div>
+</footer>
+</main>
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
