@@ -1,0 +1,73 @@
+ <div class="card mb-3">
+<div class="card-body">
+
+{{#each reviewList}}
+ <div class="card mb-3">
+ <div class="row g-3">
+ <div class="col-12">
+
+    {{#with title}}
+    <h2 class="text">{{userName}}</h2>
+       <div>{{caption}}</div> 
+        <div>{{date}}</div>
+ {{/with}}
+
+ <hr class="my-4">
+
+ {{#with reviewBody}}
+
+ {{#with seller}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+ {{/with}}
+
+ {{#with rating}}
+ <span class="d-flex">{{title}}: {{value}}</span>
+ {{/with}}
+
+ {{#each text}}
+ <p>{{this}}</p>
+ {{/each}}
+ 
+ {{#with advantages}}
+ <h6 class="text">{{title}}</h6>
+ <p>{{text}}</p>
+ {{/with}}
+
+ {{#with disadvantages}}
+ <h6 class="text">{{title}}</h6>
+ <p>{{text}}</p>
+ {{/with}}
+ 
+<div class="col-2">
+ {{#each images}}
+ <img class="card-img-top" 
+    src="https://picsum.photos/110/110" alt="Product photo">{{this.images}} </img>
+ {{/each}}
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ {{#each coments}}
+ <div class="card mb-3">
+ <div class="row g-3">
+    <div class="card-body">
+ <h2 class="text">{{userName}}</h2>
+       <div>{{date}}</div> 
+        <p>{{text}}</p>
+        </div>
+        </div>
+        </div>
+       
+{{/each}}
+ </div>
+</div>
+ {{/with}}
+</div>
+</div>
+</div>
+ {{/each}}
+</div>
+</div>
+</div>
+    
