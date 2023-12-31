@@ -1,0 +1,186 @@
+<main>
+    <section>  
+          <div class="row g-3">
+            <div class="card">  
+                <div class="card-boby"> 
+       <nav class="nav">
+        {{#with navigation}}
+        {{#each links}}
+  <a class="nav-link active" aria-current="page" href={{"href"}}>{{text}}</a>
+{{/each}}
+<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+{{/with}}
+</nav>
+</div>
+</div>
+<br>
+<br>
+   <div>
+{{#each breadcrumb}}
+<div>{{> link text=name href=url blank=true noLine=true}}</div>
+{{/each}}
+</div> 
+
+<div>
+ <h2 class="mb-2">{{header}}</h2>
+                        {{#each sortBlock}}
+                        <div class="col-2">
+                            <select class="form-select">
+                                <option selected>{{placeholder}}</option>
+                                {{#each options}}
+                                <option value="{{value}}">{{text}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <br>
+<div>
+     <div class="card">
+ <div class="col-4"> 
+  {{#with filterBlock}} 
+  {{#with sellers}}
+  <h6 class="mb-2">{{title}}</h6>
+
+  {{#each list}}
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">{{value}} </label>
+</div>
+   {{/each}}
+   {{/with}}
+
+ <hr class="my-4">
+
+{{#with brands}}
+<h6 class="mb-2">{{title}}</h6>
+{{#with input}}
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+{{/with}}
+ {{#each options}}
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">{{value}} </label>
+</div>
+   {{/each}}
+   {{/with}}
+   
+
+   <hr class="my-4">
+
+{{#with price}}
+<h6 class="mb-2">{{title}}</h6>
+{{#with range}}
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="{{from}}" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="{{to}}" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+{{/with}}
+{{#with button}}
+<div>
+<a href={{"link"}} class="btn btn-outline-secondary">{{text}}</a>
+</div>
+{{/with}}
+{{/with}}
+
+<hr class="my-4">
+
+
+{{#each filterList}}
+<h6 class="mb-2">{{title}}</h6>
+{{#each options}}
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">{{value}} </label>
+</div>
+{{/each}}
+<hr class="my-4">
+{{/each}}
+   {{/with}}
+</div>
+</div>
+<br>
+
+  <div class="card"> 
+                <div class="card-boby"> 
+                    <div class="col-4">
+{{#each goodsList}} 
+<img class="card-img-top" 
+    src="https://picsum.photos/110/110" alt="Product photo"></img>
+<div>
+    <span class="badge text-bg-warning 
+            rounded-pill text-capitalaiz">Hot</span>     
+ <span class="badge text-bg-primary 
+            rounded-pill text-capitalaiz">New</span>
+  </div>     
+<div>
+    <span class="badge text-bg-success
+             text-capitalaiz">Fast</span>
+            </div>
+<div>
+            <span class="badge text-bg-secondary 
+            text-capitalaiz">Free</span>
+</div>
+<h5 class="mb-2">{{name}}</h5>
+{{#with review}}
+<span class="d-flex">{{amount}} {{text}}</span>
+{{/with}}
+<h4 class="mb-2">{{price}}</h4>
+<span class="d-flex">{{delivery}} {{text}}</span>
+
+{{#each buttons}}
+<div>
+<a class="my-1 btn {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isSecondary}}btn-secondary{{/if}}"
+aria-current="page" href={{"link"}}>{{text}}</a>
+</div>
+{{/each}}
+{{#each characteristics}}
+<span class="d-flex">{{title}}: {{value}}</span>
+{{/each}}
+ {{/each}} 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  <br>
+  
+ {{#with service}}
+<div class="card text-bg-success">
+    <div class="card-header text-center">
+    <div class="card-body text-center">
+<h2>{{title}}</h2>
+<p>{{description}}</p>
+{{#each buttons}}
+<a href={{"link"}} class="btn btn-primary">{{text}}</a>
+{{/each}}
+</div>
+</div>
+</div>
+{{/with}} 
+</div>
+
+
+<footer>
+
+    <div class="row g-5">
+        {{#each footer}}
+    <div class="nav col-2">
+    <div>
+{{#each this}}
+<div>
+    <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+     </div>
+{{/each}}
+</div>
+</div>
+{{/each}}
+</div>
+</footer>
+</main>
